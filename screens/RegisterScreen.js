@@ -1,4 +1,12 @@
-import { StyleSheet, Text, View, TextInput, KeyboardAvoidingView, Pressable, Alert } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  KeyboardAvoidingView,
+  Pressable,
+  Alert,
+} from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
@@ -10,9 +18,9 @@ const UserFactory = {
       name,
       email,
       password,
-      image
+      image,
     };
-  }
+  },
 };
 
 const RegisterScreen = () => {
@@ -50,15 +58,34 @@ const RegisterScreen = () => {
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: "white", padding: 10, alignItems: "center" }}>
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: "white",
+        padding: 10,
+        alignItems: "center",
+      }}
+    >
       <KeyboardAvoidingView>
-        <View style={{ marginTop: 100, justifyContent: "center", alignItems: "center" }}>
-          <Text style={{ color: "#4A55A2", fontSize: 17, fontWeight: "600" }}>Register</Text>
-          <Text style={{ fontSize: 17, fontWeight: "600", marginTop: 15 }}>Register To your Account</Text>
+        <View
+          style={{
+            marginTop: 100,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Text style={{ color: "#4A55A2", fontSize: 17, fontWeight: "600" }}>
+            Register
+          </Text>
+          <Text style={{ fontSize: 17, fontWeight: "600", marginTop: 15 }}>
+            Register To your Account
+          </Text>
         </View>
         <View style={{ marginTop: 50 }}>
           <View style={{ marginTop: 10 }}>
-            <Text style={{ fontSize: 18, fontWeight: "600", color: "gray" }}>Name</Text>
+            <Text style={{ fontSize: 18, fontWeight: "600", color: "gray" }}>
+              Name
+            </Text>
             <TextInput
               value={name}
               onChangeText={(text) => setName(text)}
@@ -67,7 +94,9 @@ const RegisterScreen = () => {
             />
           </View>
           <View>
-            <Text style={{ fontSize: 18, fontWeight: "600", color: "gray" }}>Email</Text>
+            <Text style={{ fontSize: 18, fontWeight: "600", color: "gray" }}>
+              Email
+            </Text>
             <TextInput
               value={email}
               onChangeText={(text) => setEmail(text)}
@@ -76,7 +105,9 @@ const RegisterScreen = () => {
             />
           </View>
           <View style={{ marginTop: 10 }}>
-            <Text style={{ fontSize: 18, fontWeight: "600", color: "gray" }}>Password</Text>
+            <Text style={{ fontSize: 18, fontWeight: "600", color: "gray" }}>
+              Password
+            </Text>
             <TextInput
               value={password}
               onChangeText={(text) => setPassword(text)}
@@ -86,7 +117,9 @@ const RegisterScreen = () => {
             />
           </View>
           <View style={{ marginTop: 10 }}>
-            <Text style={{ fontSize: 18, fontWeight: "600", color: "gray" }}>Image</Text>
+            <Text style={{ fontSize: 18, fontWeight: "600", color: "gray" }}>
+              Image
+            </Text>
             <TextInput
               value={image}
               onChangeText={(text) => setImage(text)}
@@ -94,11 +127,20 @@ const RegisterScreen = () => {
               placeholder="Enter your image URL"
             />
           </View>
-          <Pressable  testID="register-button" onPress={handleRegister} style={styles.registerButton}>
+          <Pressable
+            testID="register-button"
+            onPress={handleRegister}
+            style={styles.registerButton}
+          >
             <Text style={styles.buttonText}>Register</Text>
           </Pressable>
-          <Pressable onPress={() => navigation.goBack()} style={{ marginTop: 15 }}>
-            <Text style={{ textAlign: "center", color: "gray", fontSize: 16 }}>Already Have an account? Sign in</Text>
+          <Pressable
+            onPress={() => navigation.goBack()}
+            style={{ marginTop: 15 }}
+          >
+            <Text style={{ textAlign: "center", color: "gray", fontSize: 16 }}>
+              Already Have an account? Sign in
+            </Text>
           </Pressable>
         </View>
       </KeyboardAvoidingView>
@@ -124,7 +166,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   buttonText: {
-    color: "white",
+    color: "#ffcccc",
     fontSize: 16,
     fontWeight: "bold",
     textAlign: "center",
